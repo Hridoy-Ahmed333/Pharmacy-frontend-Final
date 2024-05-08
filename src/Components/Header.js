@@ -34,24 +34,57 @@ const SiteName = styled.span`
     font-size: 2.2rem; // Increase font size on hover
   }
 `;
+// const SearchButton = styled.button`
+//   background-color: #007bff; // Button color
+//   color: white; // Text color
+//   border: none; // Remove default button border
+//   cursor: pointer; // Change cursor to pointer on hover
+//   border-radius: 10%; // Make the button round
+//   width: 50px; // Width of the button
+//   height: 50px; // Height of the button
+//   margin-left: 1rem;
+//   margin-right: 1rem; // Space between the search box and the button// Use flex to center the icon inside the button
+//   align-items: center; // Vertically center the icon
+//   justify-content: center; // Horizontally center the icon
+//   transition: background-color 0.3s ease; // Smooth transition for color change
+//   height: 2.5rem;
+//   width: 5rem;
+
+//   &:hover {
+//     background-color: #0056b3; // Darken the button color on hover
+//   }
+// `;
+
 const SearchButton = styled.button`
-  background-color: #007bff; // Button color
-  color: white; // Text color
-  border: none; // Remove default button border
-  cursor: pointer; // Change cursor to pointer on hover
-  border-radius: 10%; // Make the button round
-  width: 50px; // Width of the button
-  height: 50px; // Height of the button
+  background-image: linear-gradient(
+    to right,
+    #40e0d0,
+    #00b4db
+  ); /* Elegant gradient green colors */
+  color: white; /* Text color remains white for contrast */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 10%; /* Make the button round */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  color: black;
+
+  width: 5rem; // Width of the button
+  height: 2.5rem; // Height of the button
   margin-left: 1rem;
   margin-right: 1rem; // Space between the search box and the button// Use flex to center the icon inside the button
   align-items: center; // Vertically center the icon
-  justify-content: center; // Horizontally center the icon
-  transition: background-color 0.3s ease; // Smooth transition for color change
-  height: 2.5rem;
-  width: 5rem;
-
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-left: 2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    font-weight 0.6s ease, font-size 0.6s ease;
   &:hover {
-    background-color: #0056b3; // Darken the button color on hover
+    /* Scale up the button by 10% on hover */
+    transform: scale(1.1);
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease,
+      font-weight 0.4s ease;
   }
 `;
 

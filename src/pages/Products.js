@@ -48,33 +48,30 @@ const RowContainer = styled.div`
 `;
 
 const CategoryButton = styled.button`
-  background-color: rgb(0, 128, 0); // Button color
-  color: white; // Text color
+  background: linear-gradient(to right, #50c878, #008000);
+  color: white; // Text color remains white for contrast
   border: none; // Remove default button border
   cursor: pointer; // Change cursor to pointer on hover
-  border-radius: 5%; // Make the button round
+  border-radius: 10px; // Make the button round
   padding-top: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  margin: 0 auto; // Space between the search box and the button// Use flex to center the icon inside the button
+  margin: 0 auto; // Space between the search box and the button
   align-items: center; // Vertically center the icon
   justify-content: center; // Horizontally center the icon
   // Smooth transition for color change
   height: 2.5rem;
+  font-weight: 600;
   width: 55%;
-  transition: background-color 0.3s ease, height 0.3s ease, width 0.2s ease,
-    font-weight 0.4s ease;
+  transition: transform 0.3s ease, background 0.3s ease, font-weight 0.6s ease,
+    font-size 0.6s ease;
   &:hover {
-    // Darken the button color on hover
+    background: linear-gradient(to right, #008000, #50c878);
+    transform: scale(1.1);
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.4);
-    font-size: 15px;
-    height: 3rem;
-    width: 70%;
-    font-weight: bold;
-    transition: background-color 0.3s ease, height 0.3s ease, width 0.2s ease,
-      font-weight 0.4s ease;
+    transition: background 0.3s ease, transform 0.3s ease, font-weight 0.4s ease;
   }
 `;
 
@@ -86,65 +83,67 @@ const Cnt = styled.div`
 `;
 
 const FilterButton = styled.button`
-  background-color: rgb(0, 128, 0); // Button color
-  color: white; // Text color
+  background: linear-gradient(to right, #50c998, #008000);
+  color: white; // Text color remains white for contrast
   border: none; // Remove default button border
   cursor: pointer; // Change cursor to pointer on hover
-  border-radius: 5%; // Make the button round
+  border-radius: 10px; // Make the button round
   padding-top: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  margin: 0 auto; // Space between the search box and the button// Use flex to center the icon inside the button
+  margin: 0 auto; // Space between the search box and the button
   align-items: center; // Vertically center the icon
   justify-content: center; // Horizontally center the icon
-  // Smooth transition for color change
+  font-size: 1rem;
   height: 2.5rem;
-  font-weight: normal;
+  font-weight: 700;
   width: 55%;
-  transition: background-color 0.3s ease, height 0.3s ease, width 0.3s ease,
-    font-weight 0.6s ease, font-size 0.6s ease;
+  transition: transform 0.3s ease, background 0.3s ease, font-weight 0.6s ease,
+    font-size 0.6s ease;
   &:hover {
-    // Darken the button color on hover
+    background: linear-gradient(to right, #008000, #50c898);
+    transform: scale(1.1);
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.4);
-    font-size: 15px;
-    height: 3.5rem;
-    width: 70%;
-    transition: background-color 0.3s ease, height 0.3s ease, width 0.2s ease,
-      font-weight 0.4s ease;
+    transition: background 0.3s ease, transform 0.3s ease, font-weight 0.4s ease;
   }
 `;
 
 const FilterCloseButton = styled.button`
-  background-color: #ff0000; // Button color
-  color: white; // Text color
-  border: none; // Remove default button border
-  cursor: pointer; // Change cursor to pointer on hover
-  border-radius: 5%; // Make the button round
+  background: linear-gradient(
+    to right,
+    #ff6368,
+    #ff4500,
+    red
+  ); /* Lighter red to deeper orange */
+  color: white; /* Text color remains white for contrast */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 10px; /* Make the button round */
   padding-top: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  font-weight: normal;
-  margin: 0 auto; // Space between the search box and the button// Use flex to center the icon inside the button
-  align-items: center; // Vertically center the icon
-  justify-content: center; // Horizontally center the icon
-  // Smooth transition for color change
+  margin: 0 auto; /* Space between the search box and the button */
+  align-items: center; /* Vertically center the icon */
+  justify-content: center; /* Horizontally center the icon */
   height: 3rem;
+  font-weight: 600;
   width: 55%;
-  transition: background-color 0.3s ease, height 0.3s ease, width 0.3s ease,
-    font-weight 0.6s ease, font-size 0.6s ease;
+  transition: transform 0.3s ease, background 0.3s ease, font-weight 0.6s ease,
+    font-size 0.6s ease;
+
   &:hover {
-    // Darken the button color on hover
+    background: linear-gradient(
+      to right,
+      #ff4500,
+      #ff6347
+    ); /* Deepen the orange on hover */
+    transform: scale(1.1);
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.4);
-    font-size: 15px;
-    font-weight: bold;
-    height: 3.5rem;
-    width: 70%;
-    transition: background-color 0.3s ease, height 0.3s ease, width 0.2s ease,
-      font-weight 0.4s ease;
+    transition: background 0.3s ease, transform 0.3s ease, font-weight 0.4s ease;
   }
 `;
 

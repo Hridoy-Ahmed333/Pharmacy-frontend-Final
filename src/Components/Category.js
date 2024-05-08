@@ -4,7 +4,8 @@ import { useContext, useEffect, useState } from "react";
 import { SearchContext } from "../context/SearchContext";
 const Row1 = styled.div`
   height: 2.5rem; // This sets the height of the row
-  background-color: rgb(100, 200, 0);
+  background: linear-gradient(to right, rgb(173, 255, 47), rgb(100, 200, 0));
+
   color: darkblue;
   font-size: 1.4rem;
   padding-top: 0.3rem;
@@ -21,7 +22,7 @@ const Row1 = styled.div`
   transition: background-color 0.3s ease, height 0.3s ease, width 0.2s ease,
     font-size 0.6s ease;
   &:hover {
-    background-color: rgb(173, 255, 47);
+    background: linear-gradient(to right, rgb(100, 200, 0), rgb(173, 255, 47));
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.4);
     height: 3.5rem;
     width: 100%;

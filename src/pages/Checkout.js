@@ -412,7 +412,8 @@ function Checkout() {
         }),
       });
       const data = await res.json();
-      //console.log(data);
+      console.log(data);
+      return data;
     } catch (error) {
       console.log(error);
     }
@@ -438,7 +439,15 @@ function Checkout() {
         window.location = data.url;
         await updateUser();
         await updateMedicine();
-        await order();
+        const orderResponse = await order();
+        console.log(orderResponse);
+
+        const orderExist = localStorage.getItem("invoice");
+        if (orderExist) {
+          localStorage.removeItem("invoice");
+        }
+        const orderString = JSON.stringify(orderResponse);
+        localStorage.setItem("invoice", orderString);
         localStorage.removeItem("cart");
         localStorage.removeItem("cartAmount");
         localStorage.removeItem("order");
@@ -453,7 +462,15 @@ function Checkout() {
   async function handeleOrder() {
     await updateUser();
     await updateMedicine();
-    await order();
+    const orderResponse = await order();
+    console.log(orderResponse);
+
+    const orderExist = localStorage.getItem("invoice");
+    if (orderExist) {
+      localStorage.removeItem("invoice");
+    }
+    const orderString = JSON.stringify(orderResponse);
+    localStorage.setItem("invoice", orderString);
     localStorage.removeItem("cart");
     localStorage.removeItem("cartAmount");
     localStorage.removeItem("order");
@@ -479,6 +496,7 @@ function Checkout() {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
+
         setOrderMed(data);
       } catch (error) {
         console.error(
@@ -490,6 +508,8 @@ function Checkout() {
 
     fetchOrders();
   }, [user]); // Depend on orderIds to refetch when it changes
+
+  console.log(orderMed);
 
   if (orders?.length === 0) {
     return <div>Loading...</div>;

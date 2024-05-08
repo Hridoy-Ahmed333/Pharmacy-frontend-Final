@@ -78,26 +78,28 @@ const Div = styled.div`
 `;
 
 const Button = styled.button`
-  margin: 0 auto;
-  height: 3rem;
-  width: 15rem;
+  height: 2.5rem; // This sets the height of the row
+  background: linear-gradient(to right, rgb(173, 255, 47), rgb(100, 200, 0));
+
+  color: darkblue;
+  font-size: 1.4rem;
+  padding-top: 0.3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  padding-bottom: 0.3rem;
+  border-radius: 20px;
+  font-weight: 600;
+  width: 60%;
   cursor: pointer;
-  background-color: rgb(100, 200, 0);
-  border-radius: 10rem;
-  font-weight: 750;
-  font-size: 1rem;
-  color: black;
-  margin: 2rem auto;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
-  border: none;
-  margin-bottom: 1rem;
-  transition: background-color 0.3s ease, height 0.3s ease, width 0.3s ease;
+  margin: 0 auto;
+  display: flex; // This makes the div a flex container if needed
+  align-items: center; // This centers the content vertically if needed
+  justify-content: center; // This centers the content horizontally if needed
+  transition: background-color 0.3s ease, height 0.3s ease, width 0.2s ease,
+    transform 0.3s ease, font-size 0.6s ease;
   &:hover {
-    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.4);
-    height: 4rem;
-    width: 18rem;
-    transition: background-color 0.3s ease, height 0.3s ease, width 0.3s ease;
-    font-size: 1.5rem;
+    background: linear-gradient(to right, rgb(100, 200, 0), rgb(173, 255, 47));
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
   }
 `;
 const Span1 = styled.span`

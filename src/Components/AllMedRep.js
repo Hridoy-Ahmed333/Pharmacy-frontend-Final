@@ -124,6 +124,7 @@ function AllMedRep({ products }) {
 }
 
 function ProductEl({ el, index }) {
+  console.log(el);
   return (
     <StyledDiv data-index={index}>
       <PicDiv>
@@ -135,12 +136,16 @@ function ProductEl({ el, index }) {
       </PicDiv>
       <NameDiv>{el?.name}</NameDiv>
       <TotalItemBuyDiv>{el?.totalItemBuy}</TotalItemBuyDiv>
-      <TotalItemSoldDiv>{el?.totalItemSold}</TotalItemSoldDiv>
+      <TotalItemSoldDiv>{el?.intotal}</TotalItemSoldDiv>
       <TotalBuyCostDiv>
-        {(el?.buyingPrice * el?.totalItemSold).toFixed(2)} Taka
+        {(el?.buyingPrice * el?.intotal).toFixed(2)} Taka
       </TotalBuyCostDiv>
       <TotalSellCostDiv>
-        {(el?.totalSellMoney).toFixed(2)} Taka
+        {(
+          (el?.price - (el?.discountPercentage / 100) * el?.price) *
+          el?.intotal
+        ).toFixed(2)}{" "}
+        Taka
       </TotalSellCostDiv>
       <ProfitDiv>
         <Calc el={el} />
@@ -150,8 +155,11 @@ function ProductEl({ el, index }) {
 }
 
 function Calc({ el }) {
-  const buy = el?.buyingPrice * el?.totalItemSold;
-  const sell = el?.totalSellMoney;
+  const buy = el?.buyingPrice * el?.intotal;
+  const sell = (
+    (el?.price - (el?.discountPercentage / 100) * el?.price) *
+    el?.intotal
+  ).toFixed(2);
   return (
     <CalcContainer>
       {sell >= buy ? (

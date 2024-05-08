@@ -101,11 +101,20 @@ const ProductCard = ({ product, onDelete }) => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const isAdmin = user.role === "admin";
+
   const handleDelete = async () => {
-    if (typeof onDelete === "function") {
-      await onDelete(product._id);
+    // Prompt the user for confirmation
+    const shouldDelete = window.confirm(
+      "Are you sure you want to delete this product?"
+    );
+    if (shouldDelete) {
+      // Proceed with deletion if the user confirms
+      if (typeof onDelete === "function") {
+        await onDelete(product._id);
+      }
     }
   };
+
   const handleClick = (e) => {
     e.preventDefault();
     navigate(`/${product._id}`);

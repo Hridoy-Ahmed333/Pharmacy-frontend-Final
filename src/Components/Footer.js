@@ -3,6 +3,7 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { TfiYoutube } from "react-icons/tfi";
 import { ImMail } from "react-icons/im";
+import { useNavigate } from "react-router-dom";
 
 const FooterWrapper = styled.header`
   display: flex;
@@ -51,15 +52,25 @@ const StyledLink = styled.a`
     color: #fff;
   }
 `;
+const StyledDiv = styled.div`
+  cursor: pointer;
+`;
 
 function Footer() {
+  const navigate = useNavigate();
+  function handleTerm() {
+    navigate("/term");
+  }
+  function handlePolicy() {
+    navigate("/policy");
+  }
   return (
     <FooterWrapper>
       <Content1>
         <div>About This Website</div>
         <div>Copyright Reserved &#169;</div>
-        <div>Terms and condition</div>
-        <div>Policy</div>
+        <StyledDiv onClick={handleTerm}>Terms and condition</StyledDiv>
+        <StyledDiv onClick={handlePolicy}> Policy</StyledDiv>
       </Content1>
       <Content2>
         <Contact>Contact Me</Contact>

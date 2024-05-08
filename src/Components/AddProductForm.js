@@ -33,17 +33,37 @@ const StyledArea = styled.textarea`
   border-radius: 4px;
   min-height: 20rem;
 `;
-
 const StyledButton = styled.button`
-  padding: 0.5rem 1rem;
-  height: 2.5rem;
-  width: 8rem;
+  background-image: linear-gradient(
+    to right,
+    #40e0d0,
+    #00b4db
+  ); /* Elegant gradient green colors */
+  color: white; /* Text color remains white for contrast */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 10%; /* Make the button round */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  color: black;
+
+  width: 10rem; // Width of the button
+  height: 2.5rem; // Height of the button
+  margin-left: 1rem;
+  margin-right: 1rem; // Space between the search box and the button// Use flex to center the icon inside the button
+  align-items: center; // Vertically center the icon
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
   margin: 0 auto;
-  background-color: blue;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    font-weight 0.6s ease, font-size 0.6s ease;
+  &:hover {
+    /* Scale up the button by 10% on hover */
+    transform: scale(1.1);
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease,
+      font-weight 0.4s ease;
+  }
 `;
 
 const StyledError = styled.span`

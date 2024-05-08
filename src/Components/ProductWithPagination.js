@@ -4,6 +4,16 @@ import ProductComponent from "./ProductComponent";
 import { deleteMedicine, getMedicine } from "../api/medicineApi";
 import styled from "styled-components";
 import { SearchContext } from "../context/SearchContext";
+import { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const ProductComponetContainer = styled.div``;
 const Container = styled.div`
@@ -102,15 +112,37 @@ function ProductWithPagination() {
           <ProductComponent products={newProduct} onDelete={handleDelete} />
         </ProductComponetContainer>
         <PageNumContainer>
-          <button onClick={movePrev}> &lt;&lt; Previous Page</button>
+          <PaginationButton onClick={movePrev}>
+            {" "}
+            &lt;&lt; Previous Page
+          </PaginationButton>
           {Array.from({ length: totalPages }).map((_, i) => (
-            <button key={i}>{i + 1}</button>
+            <PaginationButton key={i}>{i + 1}</PaginationButton>
           ))}
-          <button onClick={moveNext}>Next Page &gt;&gt;</button>
+          <PaginationButton onClick={moveNext}>
+            Next Page &gt;&gt;
+          </PaginationButton>
         </PageNumContainer>
       </Container>
     </div>
   );
 }
+
+const PaginationButton = styled.button`
+  background-color: #f0f0f0; /* Light grey background */
+  color: #333; /* Dark text color */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px 10px; /* Padding inside the button */
+  font-size: 14px; /* Font size */
+  cursor: pointer; /* Cursor changes to pointer on hover */
+  margin: 0 5px; /* Margin between buttons */
+  animation: ${fadeIn} 0.3s ease; /* Apply fade-in animation */
+
+  &:hover {
+    background-color: #7b99e6; /* Change to a different color on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+`;
 
 export default ProductWithPagination;

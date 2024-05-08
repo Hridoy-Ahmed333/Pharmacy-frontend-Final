@@ -156,3 +156,37 @@ export async function searchByStock(searchData) {
     alert("Search happen Cannot be done because server side error");
   }
 }
+
+export async function getMedicineOrder(startDate, endDate) {
+  try {
+    // Construct the URL with query parameters
+    const url = `http://localhost:8080/medicine/getOrder/date?startDate=${encodeURIComponent(
+      startDate
+    )}&endDate=${encodeURIComponent(endDate)}`;
+
+    const response = await fetch(url, {
+      method: "GET",
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+    throw err; // Rethrow the error to handle it in the calling code
+  }
+}
+
+export async function getMedicineOrderWithoutDate() {
+  try {
+    // Construct the URL with query parameters
+    const url = `http://localhost:8080/medicine/getOrder/withoudate`;
+
+    const response = await fetch(url, {
+      method: "GET",
+    });
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+    throw err; // Rethrow the error to handle it in the calling code
+  }
+}

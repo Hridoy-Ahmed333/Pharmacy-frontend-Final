@@ -18,6 +18,8 @@ import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import UserOrder from "./pages/UserOrder";
 import AdminOrder from "./pages/AdminOrder";
+import Terms from "./pages/Terms";
+import Policy from "./pages/Policy";
 
 function App() {
   const [visitedCart, setVisitedCart] = useState(false);
@@ -38,6 +40,8 @@ function App() {
             <Route path="cancel" element={<Cancel />} />
             <Route path="userOrder" element={<UserOrder />} />
             <Route path="adminOrders" element={<AdminOrder />} />
+            <Route path="term" element={<Terms />} />
+            <Route path="policy" element={<Policy />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
           <Route path="login" element={<Login />} />

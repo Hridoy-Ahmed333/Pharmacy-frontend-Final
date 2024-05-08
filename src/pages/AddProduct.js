@@ -13,14 +13,21 @@ const Button = styled.button`
   padding: 0.5rem 1rem;
   height: 2.5rem;
   width: 15rem;
+  font-size: 1rem;
+  font-weight: 750;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
   margin: 0 auto;
-  background-color: blue;
-  color: white;
+  background: linear-gradient(to right, #40e0d0, #00b4db);
+  color: black;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+
   &:hover {
-    background-color: #0056b3; // Darken the button color on hover
+    transform: scale(1.1);
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(to right, #00b4db, #40e0d0);
   }
 `;
 

@@ -36,32 +36,44 @@ const ButtonContainer = styled.div`
   margin-top: 4rem;
   margin-bottom: 2rem;
 `;
-const EditButton = styled.button`
-  background-color: #007bff; /* Vibrant Blue */
+
+const RestockButton = styled.button`
+  background: linear-gradient(to right, #ffa500, #ff4500);
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border-radius: 0.25rem;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    background-color: #0056b3; /* Darker Blue on Hover */
+    background: linear-gradient(to right, #ff4500, #ffa500);
+    transform: scale(1.1); // Increase the size by 10%
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
   }
 `;
-const RestockButton = styled.button`
-  background-color: #ffa500; /* Orange */
+
+const EditButton = styled.button`
+  background: linear-gradient(to right, #007bff, #00c6ff);
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border-radius: 0.25rem;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    background-color: #ff8c00; /* Darker Orange on Hover */
+    background: linear-gradient(to right, #00c6ff, #007bff);
+    transform: scale(1.1); // Increase the size by 10%
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
   }
 `;
 
