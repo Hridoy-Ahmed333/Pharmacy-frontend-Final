@@ -173,26 +173,62 @@ function Success() {
       calculateTotalWithDiscountForAll(products);
 
     const tableColumn = ["Field", "Value"];
+
     const tableData = [
-      ["Username", username],
-      ["Date", invoice.date],
+      [{ content: "Username", styles: { minCellHeight: 10 } }, username],
+      [{ content: "Date", styles: { minCellHeight: 10 } }, invoice.date],
       ...products.map((product) => [
-        `${product.name}`,
-        `(${
-          product.inTotal
-        } pieces, total price with discount: ${calculateTotalWithDiscountForAll(
-          [product]
-        ).toFixed(2)})`,
+        { content: `${product.name}`, styles: { minCellHeight: 10 } },
+        {
+          content: `(${
+            product.inTotal
+          } pieces, total price with discount: ${calculateTotalWithDiscountForAll(
+            [product]
+          ).toFixed(2)})`,
+          styles: { minCellHeight: 10 },
+        },
       ]),
-      ["Total Price with Discount", totalMedicinePriceWithDiscount.toFixed(2)],
+      [
+        { content: "Total Price with Discount", styles: { minCellHeight: 10 } },
+        totalMedicinePriceWithDiscount.toFixed(2),
+      ],
     ];
+
+    // const tableData = [
+    //   ["Username", username],
+    //   ["Date", invoice.date],
+    //   ...products.map((product) => [
+    //     `${product.name}`,
+    //     `(${
+    //       product.inTotal
+    //     } pieces, total price with discount: ${calculateTotalWithDiscountForAll(
+    //       [product]
+    //     ).toFixed(2)})`,
+    //   ]),
+    //   ["Total Price with Discount", totalMedicinePriceWithDiscount.toFixed(2)],
+    // ];
+
+    const tableStyle = {
+      headStyles: { fillColor: [0, 100, 0], textColor: [200, 255, 200] }, // Header background color white, text color black
+      bodyStyles: { fillColor: [200, 255, 200], textColor: [0, 0, 0] }, // Body background color light gray, text color black
+      rowHeight: 14, // Set a fixed row height
+      columnWidth: "wrap", // Dynamically adjust column width based on content
+      styles: { overflow: "linebreak" },
+      // rowColors: [255, 255, 255], // Row background color white
+      //columnColors: [0, 0, 0], // Column background color black (not typically used, but for demonstration)
+    };
+    doc.setFontSize(15); // Smaller font size for the header
+    doc.setFont("Arial", "bold");
+    doc.setTextColor(0, 100, 0);
+    doc.text("Hridoy Pharma", 10, 10);
 
     doc.autoTable({
       head: [tableColumn],
       body: tableData,
-      margin: { top: 20 },
+      margin: { top: 20, bottom: 0 },
       theme: "grid",
       styles: { overflow: "linebreak" },
+      ...tableStyle,
     });
 
     doc.save("Invoice.pdf");
